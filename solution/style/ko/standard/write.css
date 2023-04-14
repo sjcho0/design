@@ -41,6 +41,7 @@
     .boardWrite{padding: 30px 8px;}
     .boardWrite .bunch{margin: 2px 0 3px 0;}
     .boardWrite table{display: block;}
+    .boardWrite table tbody{display: block;}
     .boardWrite table tr{display: block;}
     .boardWrite table tr:first-child th:first-child{margin-top: 0;}
     .boardWrite table th{display: block; width: 100%; padding: 0; margin-top: 20px;}
