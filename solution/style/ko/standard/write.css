@@ -47,6 +47,6 @@
     .boardWrite table tr:first-child th:first-child{margin-top: 0;}
     .boardWrite table td{display: block; width: 100%; padding: 0; margin-top: 0px; position: relative; background-color: aqua;}
     .boardWrite .limCal{width: 100%;}
-    .boardWrite .selectBox3{width: fit-content;}
+    .boardWrite .selectBox3{width: 100%;}
     .boardWrite .fileNotice{font-size: 13px;}
 }
