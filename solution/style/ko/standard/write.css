@@ -40,12 +40,12 @@
 @media screen and (max-width:767px){
     .boardWrite{padding: 30px 8px;}
     .boardWrite .bunch{margin: 2px 0 3px 0;}
-    .boardWrite table{display: block; position: relative;}
-    .boardWrite table tbody{display: block; width: 100%; position: relative;}
-    .boardWrite table tr{display: flex; flex-wrap: wrap; width: 100%; position: relative;}
-    .boardWrite table th{display: block; width: 100%; padding: 0; margin-top: 20px; position: relative; background-color: yellow;}
+    .boardWrite table{display: block;}
+    .boardWrite table tbody{display: block; width: 100%;}
+    .boardWrite table tr{display: flex; flex-wrap: wrap; width: 100%;}
+    .boardWrite table th{display: block; width: 100%; padding: 0; margin-top: 20px;}
     .boardWrite table tr:first-child th:first-child{margin-top: 0;}
-    .boardWrite table td{display: block; width: 100%; padding: 0; margin-top: 0px; position: relative; background-color: aqua;}
+    .boardWrite table td{display: block; width: 100%; padding: 0; margin-top: 0px;}
     .boardWrite .limCal{width: 100%;}
     .boardWrite .selectBox3{width: 100%;}
     .boardWrite .fileNotice{font-size: 13px;}
