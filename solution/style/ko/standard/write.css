@@ -28,7 +28,7 @@
 .boardWrite .fileNotice{font-size: 14px; color: #6f6f6f;}
 .boardWrite .fileUpload .dropBox{border: 1px solid #d9d9d9; border-radius: 12px; overflow: hidden; min-height: 75px; position: relative; margin-top: 10px;}
 .boardWrite .fileUpload .dropBox .placeholder{font-size: 14px; color: #6f6f6f; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);}
-.boardWrite .editor{border: 1px solid #d9d9d9; border-radius: 12px; overflow: hidden; min-height: 370px; margin-top: 10px;}
+.boardWrite .editor{border: 1px solid #d9d9d9; border-radius: 12px; overflow: hidden; width: 100%; min-height: 370px; margin-top: 10px;}
 .boardWrite .bunch{display:inline-block; margin-right: 16px;}
 .boardWrite .selectBox3{width: 280px;}
 .boardWrite .limCal{display:inline-block;width:268px;height:36px;margin:3px 0;color:#545454;font-family: PretendardM,sans-serif;border:1px solid #d4d4d4;border-radius: 12px;letter-spacing: -0.025em;box-sizing: border-box;}
