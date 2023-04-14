@@ -32,7 +32,7 @@
 .boardWrite .bunch{display:inline-block; margin-right: 16px;}
 .boardWrite .selectBox3{width: 280px;}
 .boardWrite .limCal{display:inline-block;width:268px;height:36px;margin:3px 0;color:#545454;font-family: PretendardM,sans-serif;border:1px solid #d4d4d4;border-radius: 12px;letter-spacing: -0.025em;box-sizing: border-box;}
-.boardWrite .limCal input[type=text]{border: 0; width: calc(50% - 9px);}
+.boardWrite .limCal input[type=text]{border: 0; width: calc(50% - 9px); margin: 0;}
 
 @media screen and (max-width:1024px){
     .boardWrite{padding: 30px 16px;}
