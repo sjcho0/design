@@ -17,8 +17,8 @@
 .boardWrite table th label,.boardWrite table th span{font-size: inherit;}
 .boardWrite table td{padding: 6px; box-sizing: border-box;}
 .boardWrite table td img{vertical-align: text-top;}
-.boardWrite input[type=text],.boardWrite input[type=password],.boardWrite input[type=email]{width: 100%; height: 34px; border: 0; border-bottom: 1px solid #d9d9d9;font-size: 15px;font-family: PretendardM, sans-serif;color: #4c4c4c; margin: 2px 0;}
-.boardWrite input::placeholder{color: #afafaf; font-family: Pretendard, sans-serif; font-size: 14px;}
+.boardWrite .writeInputText{width: 100%; height: 34px; border: 0; border-bottom: 1px solid #d9d9d9;font-size: 15px;font-family: PretendardM, sans-serif;color: #4c4c4c; margin: 2px 0;}
+.boardWrite .writeInputText::placeholder{color: #afafaf; font-family: Pretendard, sans-serif; font-size: 14px;}
 .boardWrite .inputBunch{display: flex; align-items: baseline; border-bottom: 1px solid #d9d9d9;}
 .boardWrite .inputBunch input{border-bottom: 0;}
 .boardWrite .inputBunch .bunch{flex-shrink: 0;}
@@ -32,7 +32,7 @@
 .boardWrite .bunch{display:inline-block; margin-right: 16px;}
 .boardWrite .selectBox3{width: 280px;}
 .boardWrite .limCal{display:inline-block;width:268px;height:36px;margin:3px 0;color:#545454;font-family: PretendardM,sans-serif;border:1px solid #d4d4d4;border-radius: 12px;letter-spacing: -0.025em;box-sizing: border-box;}
-.boardWrite .limCal input[type=text]{border: 0; width: calc(50% - 9px); margin: 0;}
+.boardWrite .limCal input[type=text]{border: 0; width: calc(50% - 9px);}
 
 @media screen and (max-width:1024px){
     .boardWrite{padding: 30px 16px;}
