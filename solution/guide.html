@@ -1,0 +1,890 @@
+<html lang="ko"><head>
+    <meta charset="UTF-8">
+    <title>Guide</title>
+
+    <!-- 스타일 -->
+    <link rel="stylesheet" href="style/ko/standard/reset.css">
+    <link rel="stylesheet" href="script/ui/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="style/ko/standard/common.css">
+    <script src="script/ui/jquery/jquery-3.5.1.min.js"></script>
+    <script src="script/ui/jquery-ui/jquery-ui.min.js"></script>
+    <script src="script/standard/common.js"></script>
+    <style>
+        body{margin: 20px;}
+        .cssTit{font-size: 32px; font-weight: bold; margin: 50px 0 30px; display: block;}
+        .type{font-size: 25px; margin: 0 0 16px; color: #333;}
+        .type_s{margin:20px 0 8px 0;font-size:20px}
+        .box{margin-bottom:40px;padding:20px 12px 20px 12px;background:#fff;border-radius: 15px;box-shadow: 0 0 8px rgba(0,0,0,0.04);border:1px solid #eee}
+        div > ul > li{ padding: 0 10px; margin: 5px 0 24px 0;}
+        div > ul > li > p:first-child{font-size: 18px; margin-bottom: 10px;}
+        div > ul > li > p:first-child>span{font-size:18px}
+        div > ul > li > p:not(:first-child){margin-top:4px}
+        .sort>ul:nth-of-type(1){width:400px;margin-bottom:20px}
+        .sort>ul>li{font-size:16px}
+        .sort>ul:nth-of-type(1)>li:not(:last-child){margin-bottom:12px}
+
+        .flexBox>p{margin-bottom:20px}
+        .flexBox .flexOpt1>li{border:1px solid #ddd}
+        .flexBox .flexOpt2>div{margin-bottom:10px}
+        .flexBox .flexOpt2 a{border:1px solid #ddd}
+
+        .mixBox>li{margin-bottom:20px}
+        .mixBox>li>span{border:1px solid #ddd}
+    
+        .table1{width: 25%;}
+        .table1 tr td{border: 1px solid #e1e1e1; padding: 5px ; text-align: center;}
+        .layout{display: flex;}
+        .layout .table1{width: 100%; }
+        .layout > div{width: 350px; margin-right:30px;}
+        .widthBorder li{display: flex; border: none;}
+        .widthBorder li p{border: 1px solid #808080; box-sizing: border-box; margin-left: 15px; font-size: 13px;}
+        pre{margin-top: 40px; font-size: 16px; color: black;}
+        .searchSelect>li{display:inline-block}
+        .searchSelect>li:not(:last-child){margin-right:20px}
+
+        .exportType{margin-top:16px}
+        .exportType>p{margin-bottom:8px}
+        .exportType li{position: relative; display: inline-block;min-width:88px;text-align: center;}
+        .exportType li .imgArea {display:block;height:52px;text-align: center;}
+        .exportType li .txt {display:block;margin-top:6px;color:#333;font-size:15px}
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <span class="cssTit">common.css</span>
+        <div class="box">
+            <p class="type">1. color</p>
+            <ul>
+                <li>
+                    <p>- Text color</p>
+                    <ul>
+                        <li> <span> class="col1" &ensp;</span> <span class="col1"
+                                style="display: inline-block; width: 80px; text-align: center; border: 1px solid #e1e1e1">red</span>
+                        </li>
+                        <li> <span> class="col2" &ensp;</span> <span class="col2"
+                                style="display: inline-block; width: 80px; text-align: center; border: 1px solid #e1e1e1">orange</span>
+                        </li>
+                        <li> <span> class="col3" &ensp;</span> <span class="col3"
+                                style="display: inline-block; width: 80px; text-align: center; border: 1px solid #e1e1e1">yellow</span>
+                        </li>
+                        <li> <span> class="col4" &ensp;</span> <span class="col4"
+                                style="display: inline-block; width: 80px; text-align: center; border: 1px solid #e1e1e1">green</span>
+                        </li>
+                        <li> <span> class="col5" &ensp;</span> <span class="col5"
+                                style="display: inline-block; width: 80px; text-align: center; border: 1px solid #e1e1e1">blue</span>
+                        </li>
+                        <li> <span> class="col6" &ensp;</span> <span class="col6"
+                                style="display: inline-block; width: 80px; text-align: center; border: 1px solid #e1e1e1; background-color: rgb(126, 126, 126);">withe</span>
+                        </li>
+                        <li> <span> class="col7" &ensp;</span> <span class="col7"
+                                style="display: inline-block; width: 80px; text-align: center; border: 1px solid #e1e1e1">black</span>
+                        </li>
+                        <li> <span> class="col8" &ensp;</span> <span class="col8"
+                                style="display: inline-block; width: 80px; text-align: center; border: 1px solid #e1e1e1">gray</span>
+                        </li>
+                        <li> <span> class="col9" &ensp;</span> <span class="col9"
+                                style="display: inline-block; width: 80px; text-align: center; border: 1px solid #e1e1e1">darkgray</span>
+                        </li>
+                        <li> <span> class="col10" &ensp;</span> <span class="col10"
+                                style="display: inline-block; width: 80px; text-align: center; border: 1px solid #e1e1e1">abcd</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="box">
+            <p class="type">2. Sort</p>
+            <ul>
+                <li class="sort">
+                    <p>- Sort</p>
+                    <ul>
+                        <li class="alignL">왼쪽정렬<br>class="alignL"</li>
+                        <li class="alignC">중앙정렬<br>class="alignC"</li>
+                        <li class="alignR">우측정렬<br>class="alignR"</li>
+                    </ul>
+                    <ul class="clearfix">
+                        <li class="fl">float:left<br>class="fl"</li>
+                        <li class="fr">float:right<br>class="fr"</li>
+                    </ul>
+                    <p>※ float은 코드 사용시 부모박스의 높이값을 상실하기 때문에 부모박스에 clearfix 라는 클래스 추가 필요</p>
+                </li>
+                <li class="flexBox">
+                    <p>- flex : width값은 자식에게 클래스로 주거나 css 따로 줘야함</p>
+                    <ul class="flexOpt1">
+                        <li class="wp45">1</li>
+                        <li class="wp45">2</li>
+                    </ul>
+                    <p>※ 박스 중앙 사이정렬 : 부모 박스 flexOpt1, 자식요소 width 옵션</p>
+                    <div class="flexOpt2">
+                        <div class="wp50 pr10 borderBox"><a href="" class="block">1</a></div>
+                        <div class="wp50 pl10 borderBox"><a href="" class="block">2</a></div>
+                        <div class="wp50 pr10 borderBox"><a href="" class="block">3</a></div>
+                        <div class="wp50 pl10 borderBox"><a href="" class="block">4</a></div>
+                    </div>
+                    <p>※ list형태 여러줄 나열 : 부모 박스 flexOpt2, 자식요소 width 옵션 및 패딩 박스사이징 사용(패딩과 박스 사이징 사용이유 : 좌우 박스 간격 띄우기)</p>
+
+                    <!-- 개별옵션으로 필요한것 조합 -->
+                    <p class="ft18">- flex 옵션조합 : width값은 자식에게 클래스로 주거나 css 따로 줘야함</p>
+                    <ul class="mixBox">
+                        <li class="flex flexJS">
+                            <span>시작정렬 : 부모박스 class="flex flexJS"</span>
+                        </li>
+                        <li class="flex flexJC">
+                            <span>중앙정렬 : 부모박스 class="flex flexJC"</span>
+                        </li>
+                        <li class="flex flexJB">
+                            <span>사이정렬 : 부모박스 class="flex flexJS"</span>
+                            <span>사이정렬 : 부모박스 class="flex flexJS"</span>
+                        </li>
+                        <li class="flex flexJE">
+                            <span>끝정렬 : 부모박스 class="flex flexJC"</span>
+                        </li>
+                        <li class="flex flexAC">
+                            <span class="h20">컨텐츠 중앙정렬 : 부모박스 class="flex flexAC"</span>
+                            <span class="h40">컨텐츠 중앙정렬 : 부모박스 class="flex flexAC"</span>
+                        </li>
+                        <li class="flex flexAS">
+                            <span class="h20">컨텐츠 시작정렬 : 부모박스 class="flex flexAS"</span>
+                            <span class="h40">컨텐츠 시작정렬 : 부모박스 class="flex flexAS"</span>
+                        </li>
+                        <li class="flex flexAE">
+                            <span class="h20">컨텐츠 끝정렬 : 부모박스 class="flex flexAE"</span>
+                            <span class="h40">컨텐츠 끝정렬 : 부모박스 class="flex flexAE"</span>
+                        </li>
+                    </ul>
+
+                </li>
+            </ul>
+        </div>
+        <div class="box">
+            <p class="type">3. Margin</p>
+            <ul>
+                <li>
+                    <p>- margin</p>
+                    <ul>
+                        <table class="table1">
+                            <tr>
+                                <td>class="mAuto"</td>
+                                <td>margin:0 auto</td>
+                            </tr>
+                            <tr>
+                                <td>class="mg0"</td>
+                                <td>margin:0</td>
+                            </tr>
+                        </table>
+                    </ul>
+                </li>
+                <li class="layout">
+                    <div>
+                        <p>- margin-top</p>
+                        <ul>
+                            <table class="table1">
+                                <tr>
+                                    <td>class="mt0"</td>
+                                    <td>margin-top:0px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mt05"</td>
+                                    <td>margin-top:5px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mt10"</td>
+                                    <td>margin-top:10px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mt15"</td>
+                                    <td>margin-top:15px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mt20"</td>
+                                    <td>margin-top:20px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mt25"</td>
+                                    <td>margin-top:25px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mt30"</td>
+                                    <td>margin-top:30px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mt40"</td>
+                                    <td>margin-top:40px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mt50"</td>
+                                    <td>margin-top:50px</td>
+                                </tr>
+                            </table>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>- margin-right</p>
+                        <ul>
+                            <table class="table1">
+                                <tr>
+                                    <td>class="mr0"</td>
+                                    <td>margin-right:0px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mr05"</td>
+                                    <td>margin-right:5px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mr10"</td>
+                                    <td>margin-right:10px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mr15"</td>
+                                    <td>margin-right:15px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mr20"</td>
+                                    <td>margin-right:20px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mr25"</td>
+                                    <td>margin-right:25px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mr30"</td>
+                                    <td>margin-right:30px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mr40"</td>
+                                    <td>margin-right:40px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mr50"</td>
+                                    <td>margin-right:50px</td>
+                                </tr>
+                            </table>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>- margin-bottom</p>
+                        <ul>
+                            <table class="table1">
+                                <tr>
+                                    <td>class="mb0"</td>
+                                    <td>margin-bottom:0px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mb05"</td>
+                                    <td>margin-bottom:5px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mb10"</td>
+                                    <td>margin-bottom:10px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mb15"</td>
+                                    <td>margin-bottom:15px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mb20"</td>
+                                    <td>margin-bottom:20px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mb25"</td>
+                                    <td>margin-bottom:25px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mb30"</td>
+                                    <td>margin-bottom:30px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mb40"</td>
+                                    <td>margin-bottom:40px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="mb50"</td>
+                                    <td>margin-bottom:50px</td>
+                                </tr>
+                            </table>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>- margin-left</p>
+                        <ul>
+                            <table class="table1">
+                                <tr>
+                                    <td>class="ml0"</td>
+                                    <td>margin-left:0px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="ml05"</td>
+                                    <td>margin-left:5px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="ml10"</td>
+                                    <td>margin-left:10px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="ml15"</td>
+                                    <td>margin-left:15px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="ml20"</td>
+                                    <td>margin-left:20px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="ml25"</td>
+                                    <td>margin-left:25px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="ml30"</td>
+                                    <td>margin-left:30px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="ml40"</td>
+                                    <td>margin-left:40px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="ml50"</td>
+                                    <td>margin-left:50px</td>
+                                </tr>
+                            </table>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="box">
+            <p class="type">4. Padding</p>
+            <ul>
+                <li>
+                    <p>- Padding</p>
+                    <ul>
+                        <table class="table1">
+                            <tr>
+                                <td>class="pd0"</td>
+                                <td>padding:0</td>
+                            </tr>
+                            <tr>
+                                <td>class="pd05"</td>
+                                <td>padding:5px</td>
+                            </tr>
+                            <tr>
+                                <td>class="pd10"</td>
+                                <td>padding:10px</td>
+                            </tr>
+                            <tr>
+                                <td>class="pd15"</td>
+                                <td>padding:15px</td>
+                            </tr>
+                            <tr>
+                                <td>class="pd20"</td>
+                                <td>padding:20px</td>
+                            </tr>
+                            <tr>
+                                <td>class="pd30"</td>
+                                <td>padding:30px</td>
+                            </tr>
+                        </table>
+                    </ul>
+                </li>
+                <li class="layout">
+                    <div>
+                        <p>- padding-top</p>
+                        <ul>
+                            <table class="table1">
+                                <tr>
+                                    <td>class="pt0"</td>
+                                    <td>padding-top:0px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pt05"</td>
+                                    <td>padding-top:5px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pt10"</td>
+                                    <td>padding-top:10px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pt15"</td>
+                                    <td>padding-top:15px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pt20"</td>
+                                    <td>padding-top:20px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pt25"</td>
+                                    <td>padding-top:25px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pt30"</td>
+                                    <td>padding-top:30px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pt40"</td>
+                                    <td>padding-top:40px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pt50"</td>
+                                    <td>padding-top:50px</td>
+                                </tr>
+                            </table>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>- padding-right</p>
+                        <ul>
+                            <table class="table1">
+                                <tr>
+                                    <td>class="pr0"</td>
+                                    <td>padding-right:0px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pr05"</td>
+                                    <td>padding-right:5px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pr10"</td>
+                                    <td>padding-right:10px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pr15"</td>
+                                    <td>padding-right:15px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pr20"</td>
+                                    <td>padding-right:20px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pr25"</td>
+                                    <td>padding-right:25px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pr30"</td>
+                                    <td>padding-right:30px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pr40"</td>
+                                    <td>padding-right:40px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pr50"</td>
+                                    <td>padding-right:50px</td>
+                                </tr>
+                            </table>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>- padding-bottom</p>
+                        <ul>
+                            <table class="table1">
+                                <tr>
+                                    <td>class="pb0"</td>
+                                    <td>padding-bottom:0px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pb05"</td>
+                                    <td>padding-bottom:5px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pb10"</td>
+                                    <td>padding-bottom:10px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pb15"</td>
+                                    <td>padding-bottom:15px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pb20"</td>
+                                    <td>padding-bottom:20px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pb25"</td>
+                                    <td>padding-bottom:25px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pb30"</td>
+                                    <td>padding-bottom:30px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pb40"</td>
+                                    <td>padding-bottom:40px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pb50"</td>
+                                    <td>padding-bottom:50px</td>
+                                </tr>
+                            </table>
+                        </ul>
+                    </div>
+                    <div>
+                        <p>- padding-left</p>
+                        <ul>
+                            <table class="table1">
+                                <tr>
+                                    <td>class="pl0"</td>
+                                    <td>padding-left:0px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pl05"</td>
+                                    <td>padding-left:5px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pl10"</td>
+                                    <td>padding-left:10px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pl15"</td>
+                                    <td>padding-left:15px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pl20"</td>
+                                    <td>padding-left:20px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pl25"</td>
+                                    <td>padding-left:25px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pl30"</td>
+                                    <td>padding-left:30px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pl40"</td>
+                                    <td>padding-left:40px</td>
+                                </tr>
+                                <tr>
+                                    <td>class="pl50"</td>
+                                    <td>padding-left:50px</td>
+                                </tr>
+                            </table>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="box">
+            <p class="type">5. Width</p>
+            <ul class="widthBorder">
+                <li>
+                    <span>.w50</span>
+                    <p class="w50">50px</p>
+                </li>
+                <li>
+                    <span>.w100</span>
+                    <p class="w100">width : 100px</p>
+                </li>
+                <li>
+                    <span>.w150</span>
+                    <p class="w150">width : 150px</p>
+                </li>
+                <li>
+                    <span>.w200</span>
+                    <p class="w200">width : 200px</p>
+                </li>
+                <li>
+                    <span>.wp50</span>
+                    <p class="wp50">width : 50%</p>
+                </li>
+                <li>
+                    <span>.wp100</span>
+                    <p class="wp100">width : 100%</p>
+                </li>
+            </ul>
+            <p>※ width 옵션 종류로는 w10, w20, w30, w40, w50, w60, w70, w80, w90, w100, w120, w140, w150, w160, w180, w200, w220, w240, w250, w260, w280, w300, w350, w400, w450, w500, w550, wp10, wp16, wp20, wp25, wp30, wp33, wp40, wp45, wp50, wp60, wp70, wp80, wp90, wp100 가 있습니다. </p>
+        </div>
+        <div class="box">
+            <p class="type">6. selectBox</p>
+            <ul>
+                <li>
+                    <p>- selectBox1 : 상세검색 셀렉트 폼</p>
+                    <select id="to_place" name="to_place" class="selectBox1" title="location">
+                        <option value="">직접입력</option>
+                        <option value="">test1</option>
+                        <option value="">test2</option>
+                        <option value="">test3</option>
+                    </select>
+                    <p>
+                        class="selectBox1"
+                    </p>
+                </li>
+                <li>
+                    <p>- selectBox2 : 상단 기능단 셀렉트 폼</p>
+                    <select id="to_place" name="to_place" class="selectBox2" title="location">
+                        <option value="">직접입력</option>
+                        <option value="">test1</option>
+                        <option value="">test2</option>
+                        <option value="">test3</option>
+                    </select>
+                    <p>
+                        class="selectBox2"
+                    </p>
+                </li>
+                <li>
+                    <p>- selectBox3 : 패싯 내부 셀렉트 폼</p>
+                    <select id="to_place" name="to_place" class="selectBox3" title="location">
+                        <option value="">직접입력</option>
+                        <option value="">test1</option>
+                        <option value="">test2</option>
+                        <option value="">test3</option>
+                    </select>
+                    <p>
+                        class="selectBox3"
+                    </p>
+                </li>
+                <li>
+                    <p>- 셀렉트박스 너비 조정 :</p>
+                    <select id="to_place" name="to_place" class="selectBox1 w250" title="location">
+                        <option value="">직접입력</option>
+                        <option value="">test1</option>
+                        <option value="">test2</option>
+                        <option value="">test3</option>
+                    </select>
+                    <p>
+                        class="selectBox1  w200(width 옵션)"
+                    </p>
+                    <p>※ 셀렉트박스는 최소너비만 정해져있고 글자길이에 따라 사이즈가 정해집니다. 너비조절이 필요하다면 width 옵션을 추가해주세요.</p>
+                </li>
+            </ul>
+            <p>※ 현재는 각자 다른 파트에 하나씩 쓰인 상황이라 케이스구분 및 특정 사이즈를 주기 애매한 상황입니다. 디자인파일을 좀 더 받아보고 업데이트 하겠습니다.</p>
+        </div>
+        <div class="box">
+            <p class="type">7. input</p>
+            <p class="type_s">1) inputText</p>
+            <ul>
+                <li>
+                    <p>- inputTextType1 : 전체페이지 공용 inputText</p>
+                    <input type="text" class="inputTextType1">
+                    <p>
+                        class="inputTextType1"
+                    </p>
+                </li>
+                <li>
+                    <p>- inputTextType : 레이어팝업 내부 inputText</p>
+                    <input type="text" class="inputTextType2">
+                    <p>
+                        class="inputTextType2"
+                    </p>
+                </li>
+                <li>
+                    <p>- inputTextCal datepick : datepicker 들어갈 input</p>
+                    <input type="text" class="datepick inputTextCal" maxlength="8">
+                    <p>
+                        class="inputTextCal" <br> maxlength="8"
+                    </p>
+                </li>
+                <li>
+                    <p>- inputTextCal datepickLayer : 레이어 팝업에 들어가는 input cal (모바일에서 하단 가려짐 현상때문에 위로 뛰음)</p>
+                    <input type="text" class="datepickLayer inputTextCal" maxlength="8">
+                </li>
+            </ul>
+            <p class="type_s">2) checkbox</p>
+            <ul>
+                <li>
+                    <p>- customChk : base code</p>
+                    <input type="checkbox" title="전체선택" id="selectAll" class="customChk" name="allCheck">
+                    <label for="selectAll">전체선택</label>
+                    <p>
+                        class="customChk"
+                    </p>
+                </li>
+            </ul>
+
+            <p class="type_s">3) radio</p>
+            <ul>
+                <li>
+                    <p>- customRadio : base code</p>
+                    <input type="radio" id="all1" checked="checked" class="customRadio" name="q">
+                    <label for="all1" class="mr20">완전공개</label>
+                    <input type="radio" id="all2" class="customRadio" name="q">
+                    <label for="all2">비공개</label>
+                    <p>
+                        class="customRadio"
+                    </p>
+                </li>
+                <li>
+                    <p>- customRadio1</p>
+                    <input type="radio" id="all3" class="customRadio customRadio1" name="">
+                    <label for="all3">항목</label>
+                    <ul class="exportType">
+                        <p>example</p>
+                        <li class="exportHtml">
+                            <input type="radio" checked="checked" id="html" class="firstFocus customRadio customRadio1" name="exportType" value="html"> 
+                            <label for="html" class="on">
+                                <span class="imgArea"><img src="image/standard/ico/html.png" alt="html 이미지"></span>
+                                <span class="txt">HTML</span>
+                            </label>
+                        </li>
+                        <li class="exportMail">
+                            <input type="radio" id="email" name="exportType" value="email" class="customRadio customRadio1"> 
+                            <label for="email">
+                                <span class="imgArea"><img src="image/standard/ico/email.png" alt="email 이미지"></span>
+                                <span class="txt">E-Mail</span>
+                            </label>
+                        </li>
+                        <li class="exportPrint">
+                            <input type="radio" id="print" name="exportType" value="print" class="customRadio customRadio1"> 
+                            <label for="print">
+                                <span class="imgArea"><img src="image/standard/ico/printer.png" alt="print 이미지"></span>
+                                <span class="txt">인쇄</span>
+                            </label>
+                        </li>
+                        <li class="exportPreview">
+                            <input type="radio" id="preview" name="exportType" value="preview" class="customRadio customRadio1"> 
+                            <label for="preview">
+                                <span class="imgArea"><img src="image/standard/ico/preview.png" alt="preview 이미지"></span>
+                                <span class="txt">미리보기</span>
+                            </label>
+                        </li>
+                        <li class="exportEndNote">
+                            <input type="radio" id="endnote" name="exportType" value="endnote" class="customRadio customRadio1">
+                            <label for="endnote">
+                                <span class="imgArea"><img src="image/standard/ico/endNote.png" alt="endnote 이미지"></span>
+                                <span class="txt">EndNote</span>
+                            </label>
+                        </li>
+                        <li class="exportRefworks">
+                            <input type="radio" id="refworks" name="exportType" value="refworks" class="customRadio customRadio1">
+                            <label for="refworks">
+                                <span class="imgArea"><img src="image/standard/ico/refWorks.png" alt="Refworks 이미지"></span>
+                                <span class="txt">Refworks</span>
+                            </label>
+                        </li>
+                    </ul>
+                    <p>
+                        class="customRadio customRadio1"
+                    </p>
+                </li>
+                <li>
+                    <p>- customRadio2</p>
+                    <ul class="searchSelect">
+                        <li>
+                            <input type="radio" id="stKWRD" name="st" value="KWRD" class="customRadio customRadio2" checked="checked">
+                            <label for="stKWRD" class="on">키워드</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="stFRNT" name="st" value="FRNT" class="customRadio customRadio2">
+                            <label for="stFRNT" class="">전방일치</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="stEXCT" name="st" value="EXCT" class="customRadio customRadio2">
+                            <label for="stEXCT">완전일치</label>
+                        </li>
+                    </ul>
+                    <p>
+                        class="customRadio customRadio2"
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="box">
+            <p class="type">8. Button</p>
+            <p class="type_s">1) 공통버튼</p>
+            <ul>
+                <li>
+                    <p>- btnType1 : 상단 기능단 버튼</p>
+                    <input type="submit" value="버튼1" class="btnType1">
+                    <p>
+                        class="btnType1"
+                    </p>
+                </li>
+            </ul>
+            <p class="type_s">2) 레이어팝업, 기능화면 하단 100% 크기 버튼</p>
+            <ul>
+                <li>
+                    <p>- botBtnType1</p>
+                    <input type="submit" value="버튼1" class="botBtnType1">
+                    <p>
+                        class="botBtnType1"
+                        <br>
+                        취소, - 느낌의 버튼
+                    </p>
+                </li>
+                <li>
+                    <p>- botBtnType2</p>
+                    <input type="submit" value="버튼2" class="botBtnType2">
+                    <p>
+                        class="botBtnType2"
+                        <br>
+                        확인 실행, + 느낌의 버튼
+                    </p>
+                </li>
+            </ul>
+            <p>※ 위 버튼 클래스들은 btnBunchType1 과 같이 사용되어야 합니다.</p>
+            <div class="btnBunchType1">
+                <span>
+                    <input type="reset" value="초기화" class="botBtnType1">
+                </span>
+                <span>
+                    <input type="submit" value="검색" class="botBtnType2">
+                </span>
+            </div>
+
+            <div class="btnBunchType1 one">
+                <span>
+                    <input type="submit" value="검색" class="botBtnType2">
+                </span>
+            </div>
+            <p>class="btnBunchType1 one" 하나일때 one 클래스가 스크립트로 붙도록 했습니다.</p>
+
+            <div class="btnBunchType1 many">
+                <span>
+                    <input type="reset" value="초기화" class="botBtnType1">
+                </span>
+                <span>
+                    <a href="/search/basket/list" title="바구니보기" class="botBtnType1">바구니보기</a>
+                </span>
+                <span>
+                    <a href="/search/myquery/list" title="My Query" class="botBtnType1">My Query</a>
+                </span>
+                <span>
+                    <a href="/search/service/searchHistory" title="검색 History" class="botBtnType1">검색 History</a>
+                </span>
+                <span>
+                    <input type="submit" value="검색" class="botBtnType2">
+                </span>
+            </div>
+            <p>class="btnBunchType1 many" - 요소들의 텍스트가 길거나(영문페이지), 화면을 줄였을때 요소 개수가 많아 글자가 떨어질때</p>
+
+<pre>
+마크업 예시
+    &lt;div class="btnBunchType1">
+        &lt;span>
+            버튼마크업 class="botBtnType1"
+        &lt;/span>
+        &lt;span>
+            버튼마크업 class="botBtnType2"
+        &lt;/span>
+    &lt;/div>
+</pre>
+        </div>
+        
+    </div>
+    <div>
+        <span class="cssTit">패싯</span>
+        <div class="box">
+            <p class="type">1. 패싯 좌측으로 위치 변경</p>
+            <ul>
+                <li>
+                    <p>- &lt;div class="briefContent <span class="col5">facetL</span>">&lt;/div> : facetL 클래스 추가</p>
+                    <p class="ft18"> - 내부 컨텐츠 순서 변경
+<pre class="ft18">
+&lt;div class="briefContent facetL">
+...
+    <span class="col5 ft18">&lt;div class="facetContent"></span>
+    ...
+    &lt;/div>
+
+    <span class="col5 ft18">&lt;div class="result"></span>
+    ...
+    &lt;/div>
+
+&lt;/div>      
+</pre>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>    
+
+
+</body></html>

@@ -1,0 +1,1367 @@
+<html lang="ko" style="overflow: visible;"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="전자도서관홈페이지">
+    <meta name="keyword" content="전자도서관홈페이지">
+    <meta name="copyright" content="@copy;">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no">
+    <title>학술DB-주제별리스트</title>
+
+    <!-- 템플릿 CSS -->
+    <link rel="stylesheet" href="style/ko/standard/reset.css">
+    <link rel="stylesheet" href="style/ko/standard/common.css">
+    <link rel="stylesheet" href="script/ui/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="script/ui/footable/mobiletable.css" media="screen and (max-width:1024px)">
+    <link rel="stylesheet" href="script/ui/swiper/swiper.min.css">
+    <link rel="stylesheet" href="../demo/style/ko/home/font.css">
+
+    
+    <!-- 솔루션 CSS -->
+    <link rel="stylesheet" href="style/ko/standard/font.css">
+    <link rel="stylesheet" href="style/ko/search/brief.css">
+    <!-- 솔루션 CSS -->
+
+    <link rel="stylesheet" href="../demo/style/ko/home/sub2.css">
+    
+    <!-- 템플릿 CSS -->
+
+
+    <!-- 템플릿 JS -->
+    <script src="script/ui/jquery/jquery-3.5.1.min.js"></script>
+    <script src="script/ui/jquery-ui/jquery-ui.min.js"></script>
+    <script src="script/ui/swiper/swiper.min.js"></script>
+    <script src="script/ui/sortable/Sortable.js"></script>
+    <script src="script/ui/footable/footable.js"></script>
+    <script src="script/ui/drag-to-scroll/jquery.dragnscroll.js"></script>
+    <script src="../solution/script/standard/common.js"></script>
+    <script src="../demo/script/pub/sub.js"></script>
+    <script src="../solution/script/search/brief.js"></script>
+    <!-- 템플릿 JS -->
+</head>
+
+<body>
+    <div id="divAccessibility">
+		<ul>
+			<li><a href="#divTopMenu">주메뉴 바로가기</a></li>
+			<li><a href="#divContents">본문 바로가기(skip to content)</a></li>
+			<li><a href="#divFooter">도서관정보 바로가기</a></li>
+		</ul>
+	</div>
+    <div id="divWrapper">
+        <!--divHeader-->
+        <header id="divHeader">
+            <!--header-->
+            <div class="header"> 
+                <div class="header1">
+                    <div>
+                        <h1 class="logo"><a href="">퓨쳐누리<span>전자도서관</span></a></h1>
+                        <div class="headerSrh">
+                            <form>
+                                <fieldset>
+                                    <legend>상단검색창</legend>
+                                    <div class="headerSrhFormW">
+                                        <div class="headerSrhForm">
+                                            <input type="text" placeholder="통합검색">
+                                            <input type="submit">
+                                            
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div class="globalMenu">
+                            <a href="" class="mobileSrhBtn">검색</a>
+                            <ul>
+                                <!-- <li class="login">
+                                    <a href="" title="로그인">로그인</a>
+                                </li> -->
+                                <li class="profile">
+                                    <a href="" title="요약정보" class="myMenuBtn">요약정보<span class="totalCnt">8</span></a>
+                                    
+                                    <div class="myMenuArea">
+                                        <div class="myMenuListW">
+                                            <a href="#" class="close" title="닫기">닫기</a>
+                                            <div class="myInfo">
+                                                <p class="infoTit"><span class="userId">홍길동</span>님 의 개인정보 서비스</p>
+                                                <ul class="summary">
+                                                    <li><a href=""><span>연체도서</span> : <span id="overdueCount">0</span> 권</a></li>
+                                                    <li><span>예약제재기간</span> : <span id="reserveDate">제재 대상이 아닙니다.</span></li>
+                                                    <li><span>대출제재기간</span> : <span id="loanDate">제재 대상이 아닙니다.</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="myMenuList">
+                                                <ul>
+                                                    <li> 
+                                                        <span> 
+                                                            <a class="myMenuTit" href="" title="대출현황">대출현황</a>
+                                                            <a class="myMenuStatus" href="" title="대출현황"><span id="loanCount">0</span>건 대출중</a>
+                                                            <a class="myMenuStatus" href="" title="연체도서"><span id="overdueCountLoan">0</span>건 연체중</a>
+                                                            <a class="myMenuStatus" href="" title="예약현황"><span id="reserveCount">0</span>건 예약중</a>
+                                                        </span>
+                                                    </li>
+                                                    <li> 
+                                                        <span> 
+                                                            <a class="myMenuTit" href="" title="희망도서신청">희망도서신청</a>
+                                                            <a class="myMenuStatus" href="" title="희망도서신청"><span id="purchaseProcessCount">0</span>건 진행중</a>
+                                                            <a class="myMenuStatus" href="" title="희망도서신청"><span id="purchaseArrangeCount">0</span>건 정리중</a>
+                                                        </span>
+                                                    </li>
+                                                    <li> 
+                                                        <span> 
+                                                            <a class="myMenuTit" href="" title="원문복사">원문복사</a>
+                                                            <a class="myMenuStatus" href="" title="원문복사"><span id="ddsRequestCount">0</span>건 처리중</a>
+                                                            <a class="myMenuStatus" href="" title="원문복사"><span id="ddsArriveCount">0</span>건 도착</a>
+                                                        </span>
+                                                    </li>
+                                                    <li> 
+                                                        <span> 
+                                                            <a class="myMenuTit" href="" title="상호대차">상호대차</a>
+                                                            <a class="myMenuStatus" href="" title="상호대차"><span id="illRequestCount">0</span>권 신청중</a>
+                                                        </span>
+                                                    </li>
+                                                    <li> 
+                                                        <span> 
+                                                            <a class="myMenuTit" href="" title="서가에 없는 책">서가에 없는 책</a>
+                                                            <a class="myMenuStatus" href="" title="서가에 없는 책"><span id="missrepoCount">0</span>건 처리중</a>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="myMenuList2">
+                                                <ul>
+                                                    <li> 
+                                                        <span>
+                                                            <a class="myMenuTit" href="" title="독서추천">독서추천</a>
+                                                            <a class="myMenuStatus" href="" title="나만의 추천자료 확인">나만의 추천자료 확인</a>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="language">
+                                    <a href="" title="Language">Language</a>
+                                    <ul>
+                                        <li>
+                                            <a href="" title="KOR">KOR</a>
+                                        </li>
+                                        <li>
+                                            <a href="" title="ENG">ENG</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="header2">
+                    <div>
+                        <h2 class="tabletLogo"><a href="">퓨쳐누리<span>전자도서관</span></a></h2>
+                        <div id="divTopMenu"> 
+                            <h2 class="skip">로컬네비게이션</h2>
+                            <ul>
+                                <li class="topMenu">
+                                    <a href="" title="검색">통합검색</a>
+                                    <div>
+                                        <div class="menuContent">
+                                            <ul> 
+                                                <li>
+                                                    <a href="" title="통합검색">통합검색</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="통합검색">통합검색</a></li>
+                                                            <li><a href="" title="소장자료검색">소장자료검색</a></li>
+                                                            <li><a href="" title="전자자료검색">전자자료검색</a></li>
+                                                            <li><a href="" title="외부API검색">외부API검색</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="통합검색">통합검색</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="통합검색">통합검색</a></li>
+                                                            <li><a href="" title="소장자료검색">소장자료검색</a></li>
+                                                            <li><a href="" title="전자자료검색">전자자료검색</a></li>
+                                                            <li><a href="" title="외부API검색">외부API검색</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="통합검색">통합검색</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="통합검색">통합검색</a></li>
+                                                            <li><a href="" title="소장자료검색">소장자료검색</a></li>
+                                                            <li><a href="" title="전자자료검색">전자자료검색</a></li>
+                                                            <li><a href="" title="외부API검색">외부API검색</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="유형별자료검색">유형별자료검색</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="단행본">단행본</a></li>
+                                                            <li><a href="" title="연속간행물">연속간행물</a></li>
+                                                            <li><a href="" title="학위논문">학위논문</a></li>
+                                                            <li><a href="" title="비도서">비도서</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="전자자료">전자자료</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="전자자료 통합검색">전자자료 통합검색</a></li>
+                                                            <li><a href="" title="전자저널">전자저널</a></li>
+                                                            <li><a href="" title="학술DB">학술DB</a></li>
+                                                            <li><a href="" title="전자책">전자책</a></li>
+                                                            <li><a href="" title="사이버학습">사이버학습</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>      
+                                                <li>
+                                                    <a href="" title="전자자료 이용안내">전자자료 이용안내</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="전자자료 공정이용">전자자료 공정이용</a></li>
+                                                            <li><a href="" title="교외접속">교외접속</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>   
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>   
+                                <li class="topMenu">
+                                    <a href="" title="전자자료">전자자료</a>
+                                    <div>
+                                        <div class="menuContent">
+                                            <ul> 
+                                                <li>
+                                                    <a href="" title="도서관 이용교육">도서관 이용교육</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="교육안내">교육안내</a></li>
+                                                            <li><a href="" title="정규 교육 신청">정규 교육 신청</a></li>
+                                                            <li><a href="" title="강의/연구지원 교육 신청">강의/연구지원 교육 신청</a></li>
+                                                            <li><a href="" title="온라인 교육 신청">온라인 교육 신청</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="주제가이드">주제가이드</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="이용안내">이용안내</a></li>
+                                                            <li><a href="" title="학과별주제가이드">학과별주제가이드</a></li>
+                                                            <li><a href="" title="일반주제가이드">일반주제가이드</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="전자자료">전자자료</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="사이버학습">사이버학습</a></li>
+                                                            <li><a href="" title="전자자료 통합검색">전자자료 통합검색</a></li>
+                                                            <li><a href="" title="전자저널">전자저널</a></li>
+                                                            <li><a href="" title="학술DB">학술DB</a></li>
+                                                            <li><a href="" title="전자책">전자책</a></li>
+                                                            <li><a href="" title="사이버학습">사이버학습</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>      
+                                                <li>
+                                                    <a href="" title="전자자료 이용안내">전자자료 이용안내</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="교외접속">교외접속</a></li>
+                                                            <li><a href="" title="전자자료 공정이용">전자자료 공정이용</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>   
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>  
+                                <li class="topMenu">
+                                    <a href="" title="컬렉션">컬렉션</a>
+                                    <div>
+                                        <div class="menuContent">
+                                            <ul> 
+                                                <li>
+                                                    <a href="" title="신착/인기도석">신착/인기도석</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="신착도서">신착도서</a></li>
+                                                            <li><a href="" title="인기도서">인기도서</a></li>
+                                                            <li><a href="" title="최다대출도서">최다대출도서</a></li>
+                                                            <li><a href="" title="컬력션100">컬력션100</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="추천도서">추천도서</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="테마도서">테마도서</a></li>
+                                                            <li><a href="" title="교양 100선">교양 100선</a></li>
+                                                            <li><a href="" title="고전명저 110선">고전명저 110선</a></li>
+                                                            <li><a href="" title="문학상 수상작">문학상 수상작</a></li>
+                                                            <li><a href="" title="학술원 우수학술도서">학술원 우수학술도서</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="멀티미디어실 영화자료">멀티미디어실 영화자료</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="전자자료 통합검색">전자자료 통합검색</a></li>
+                                                            <li><a href="" title="전자저널">전자저널</a></li>
+                                                            <li><a href="" title="학술DB">학술DB</a></li>
+                                                            <li><a href="" title="전자책">전자책</a></li>
+                                                            <li><a href="" title="사이버학습">사이버학습</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>      
+                                                <li>
+                                                    <a href="" title="전자자료 이용안내">전자자료 이용안내</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="전자자료 공정이용">전자자료 공정이용</a></li>
+                                                            <li><a href="" title="교외접속">교외접속</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>   
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>  
+                                <li class="topMenu">
+                                    <a href="" title="연구·학습지원">연구&#183;학습지원</a>
+                                    <div>
+                                        <div class="menuContent">
+                                            <ul> 
+                                                <li>
+                                                    <a href="" title="도서관 이용교육">도서관 이용교육</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="교육안내">교육안내</a></li>
+                                                            <li><a href="" title="정규 교육 신청">정규 교육 신청</a></li>
+                                                            <li><a href="" title="강의/연구지원 교육 신청">강의/연구지원 교육 신청</a></li>
+                                                            <li><a href="" title="온라인 교육 신청">온라인 교육 신청</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="학술연구지원">학술연구지원</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="서비스안내">서비스안내</a></li>
+                                                            <li><a href="" title="서비스신청">서비스신청</a></li>
+                                                            <li><a href="" title="학위논문">학위논문</a></li>
+                                                            <li><a href="" title="비도서">비도서</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="전자자료">전자자료</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="전자자료 통합검색">전자자료 통합검색</a></li>
+                                                            <li><a href="" title="전자저널">전자저널</a></li>
+                                                            <li><a href="" title="학술DB">학술DB</a></li>
+                                                            <li><a href="" title="전자책">전자책</a></li>
+                                                            <li><a href="" title="사이버학습">사이버학습</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>      
+                                                <li>
+                                                    <a href="" title="전자자료 이용안내">전자자료 이용안내</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="전자자료 공정이용">전자자료 공정이용</a></li>
+                                                            <li><a href="" title="교외접속">교외접속</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>   
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>  
+                                <li class="topMenu">
+                                    <a href="" title="도서관 서비스">도서관 서비스</a>
+                                    <div>
+                                        <div class="menuContent">
+                                            <ul> 
+                                                <li>
+                                                    <a href="" title="통합검색">통합검색</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="통합검색">통합검색</a></li>
+                                                            <li><a href="" title="소장자료검색">소장자료검색</a></li>
+                                                            <li><a href="" title="전자자료검색">전자자료검색</a></li>
+                                                            <li><a href="" title="외부API검색">외부API검색</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="유형별자료검색">유형별자료검색</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="단행본">단행본</a></li>
+                                                            <li><a href="" title="연속간행물">연속간행물</a></li>
+                                                            <li><a href="" title="학위논문">학위논문</a></li>
+                                                            <li><a href="" title="비도서">비도서</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="전자자료">전자자료</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="전자자료 통합검색">전자자료 통합검색</a></li>
+                                                            <li><a href="" title="전자저널">전자저널</a></li>
+                                                            <li><a href="" title="학술DB">학술DB</a></li>
+                                                            <li><a href="" title="전자책">전자책</a></li>
+                                                            <li><a href="" title="사이버학습">사이버학습</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>      
+                                                <li>
+                                                    <a href="" title="전자자료 이용안내">전자자료 이용안내</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="전자자료 공정이용">전자자료 공정이용</a></li>
+                                                            <li><a href="" title="교외접속">교외접속</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>   
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>   
+                                <li class="topMenu">
+                                    <a href="" title="도서관 안내">도서관 안내</a>
+                                    <div>
+                                        <div class="menuContent">
+                                            <ul> 
+                                                <li>
+                                                    <a href="" title="통합검색">통합검색</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="통합검색">통합검색</a></li>
+                                                            <li><a href="" title="소장자료검색">소장자료검색</a></li>
+                                                            <li><a href="" title="전자자료검색">전자자료검색</a></li>
+                                                            <li><a href="" title="외부API검색">외부API검색</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="유형별자료검색">유형별자료검색</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="단행본">단행본</a></li>
+                                                            <li><a href="" title="연속간행물">연속간행물</a></li>
+                                                            <li><a href="" title="학위논문">학위논문</a></li>
+                                                            <li><a href="" title="비도서">비도서</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <a href="" title="전자자료">전자자료</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="전자자료 통합검색">전자자료 통합검색</a></li>
+                                                            <li><a href="" title="전자저널">전자저널</a></li>
+                                                            <li><a href="" title="학술DB">학술DB</a></li>
+                                                            <li><a href="" title="전자책">전자책</a></li>
+                                                            <li><a href="" title="사이버학습">사이버학습</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>      
+                                                <li>
+                                                    <a href="" title="전자자료 이용안내">전자자료 이용안내</a>
+                                                    <div class="menuList">
+                                                        <ul>
+                                                            <li><a href="" title="전자자료 공정이용">전자자료 공정이용</a></li>
+                                                            <li><a href="" title="교외접속">교외접속</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>   
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>  
+                            </ul>
+                            <a href="#" class="wholeMenuBtn" title="전체메뉴">
+                                전체메뉴
+                                <div>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="blackBg">Black Bg</span>
+            <!--//header -->
+            <!-- 전체메뉴 -->
+            <div class="wholeMenu"> 
+                <div class="menuArea"> 
+                    <h2 class="skip">전체메뉴</h2>
+                    <div class="wholeMenuListW"> 
+                        <div class="mobileWholeMenuTop">
+                            <!-- mobileTop 태블릿,모바일 메뉴에서 보이는 영역-->
+                            <p>도서관에 오신 것을 환영합니다.</p>
+                            <!-- mobileTop 태블릿,모바일 메뉴에서 보이는 영역-->
+                            <a href="#" class="menuClose" title="전체메뉴닫기" role="button">
+                                전체메뉴닫기
+                                <span></span>
+                                <span></span>
+                            </a>
+                        </div>
+                        <!-- //mobileTop --> 
+                        <div class="divMenuList">
+                            <ul> 
+                                <li class="on">
+                                    <a href="" class="wholeMenuTit" title="자료검색">자료검색</a>
+                                    <ul>
+                                        <li>
+                                            <a href="" title="통합검색">통합검색</a>
+                                            <ul>
+                                                <li><a href="" title="통합검색">통합검색</a></li>
+                                                <li><a href="" title="소장자료검색">소장자료검색</a></li>
+                                                <li><a href="" title="전자자료검색">전자자료검색</a></li>
+                                                <li><a href="" title="외부API검색">외부API검색</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="유형별자료검색">유형별자료검색</a>
+                                            <ul>
+                                                <li><a href="" title="단행본">단행본</a></li>
+                                                <li><a href="" title="연속간행물">연속간행물</a></li>
+                                                <li><a href="" title="학위논문">학위논문</a></li>
+                                                <li><a href="" title="비도서">비도서</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="전자자료">전자자료</a>
+                                            <ul>
+                                                <li><a href="" title="전자자료 통합검색">전자자료 통합검색</a></li>
+                                                <li><a href="" title="전자저널">전자저널</a></li>
+                                                <li><a href="" title="학술DB">학술DB</a></li>
+                                                <li><a href="" title="전자책">전자책</a></li>
+                                                <li><a href="" title="사이버학습">사이버학습</a></li>
+                                            </ul>
+                                        </li>  
+                                        <li>
+                                            <a href="" title="전자자료 이용안내">전자자료 이용안내</a>
+                                            <ul>
+                                                <li><a href="" title="전자자료 공정이용">전자자료 공정이용</a></li>
+                                                <li><a href="" title="교외접속">교외접속</a></li>
+                                            </ul>
+                                        </li>  
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="" class="wholeMenuTit" title="연구학습지원">연구학습지원</a>
+                                    <ul>
+                                        <li>
+                                            <a href="" title="도서관 이용교육">도서관 이용교육</a>
+                                            <ul>
+                                                <li><a href="" title="교육안내">교육안내</a></li>
+                                                <li><a href="" title="교육일정">교육일정</a></li>
+                                                <li><a href="" title="정규/온라인 교육">정규/온라인 교육</a></li>
+                                                <li><a href="" title="강의/연구지원 교육">강의/연구지원 교육</a></li>
+                                                <li><a href="" title="장애학생 학습지원">장애학생 학습지원</a></li>
+                                                <li><a href="" title="교육자료">교육자료</a></li>
+                                            </ul>													
+                                        </li>
+                                        <li>
+                                            <a href="" title="주제별가이드">주제별가이드</a>
+                                            <ul>
+                                                <li><a href="" title="이용안내">이용안내</a></li>
+                                                <li><a href="" title="학과별주제가이드">학과별주제가이드</a></li>
+                                                <li><a href="" title="일반주제가이드">일반주제가이드</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="학술연구지원서비스">학술연구지원서비스</a>
+                                            <ul>
+                                                <li><a href="" title="서비스안내">서비스안내</a></li>
+                                                <li><a href="" title="서비스신청">서비스신청</a></li>
+                                                <li><a href="" title="신청현황">신청현황</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="논문작성지원">논문작성지원</a>
+                                            <ul>
+                                                <li><a href="" title="EndNote 설치">EndNote 설치</a></li>
+                                                <li><a href="" title="iThenticate">iThenticate</a></li>
+                                                <li><a href="" title="Copykiller">Copykiller</a></li>
+                                                <li><a href="" title="학위논문 제출">학위논문 제출</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="" class="wholeMenuTit" title="이용자서비스">이용자서비스</a>
+                                    <ul>
+                                        <li>
+                                            <a href="" title="자료이용">자료이용</a>
+                                            <ul>
+                                                <li><a href="" title="대출/반납">대출/반납</a></li>
+                                                <li><a href="" title="자료구입신청">자료구입신청</a></li>
+                                                <li><a href="" title="도서예약/우선정리">도서예약/우선정리</a></li>
+                                                <li><a href="" title="서가에 없는 도서">서가에 없는 도서</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="미소장 자료이용">미소장 자료이용</a>
+                                            <ul>
+                                                <li><a href="" title="타기관문헌복사">타기관문헌복사</a></li>
+                                                <li><a href="" title="타기관도서대출">타기관도서대출</a></li>
+                                                <li><a href="" title="타도서관이용신청">타도서관이용신청</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="이용자별 서비스">이용자별 서비스</a>
+                                            <ul>
+                                                <li><a href="" title="학부생">학부생</a></li>
+                                                <li><a href="" title="대학원생">대학원생</a></li>
+                                                <li><a href="" title="교직원">교직원</a></li>
+                                                <li><a href="" title="휴학/수료생">휴학/수료생</a></li>
+                                                <li><a href="" title="지역주민회원제">지역주민회원제</a></li>
+                                                <li><a href="" title="장애학생서비스">장애학생서비스</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="" class="wholeMenuTit" title="도서관 안내">도서관 안내</a>
+                                    <ul>
+                                        <li>
+                                            <a href="" title="도서관 소개">도서관 소개</a>
+                                            <ul>
+                                                <li><a href="" title="도서관안내">도서관안내</a></li>
+                                                <li><a href="" title="조직/직원">조직/직원</a></li>
+                                                <li><a href="" title="도서관 규정">도서관 규정</a></li>
+                                                <li><a href="" title="도서관 현황">도서관 현황</a></li>
+                                                <li><a href="" title="자료정리체계">자료정리체계</a></li>
+                                                <li><a href="" title="도서관위치">도서관위치</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="이용안내">이용안내</a>
+                                            <ul>
+                                                <li><a href="" title="이용시간">이용시간</a></li>
+                                                <li><a href="" title="시설/열람실이용">시설/열람실이용</a></li>
+                                                <li><a href="" title="모바일신분증">모바일신분증</a></li>
+                                                <li><a href="" title="와이파이 안내">와이파이 안내</a></li>
+                                                <li><a href="" title="출력복사스캔">출력복사스캔</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="분관/외국학술지지원센터">분관/외국학술지지원센터</a>
+                                            <ul>
+                                                <li><a href="" title="법학도서관">법학도서관</a></li>
+                                                <li><a href="" title="의학도서관">의학도서관</a></li>
+                                                <li><a href="" title="치의학도서관">치의학도서관</a></li>
+                                                <li><a href="" title="특성화캠퍼스도서관">특성화캠퍼스도서관</a></li>
+                                                <li><a href="" title="외국학술지원센터(FRIC)">외국학술지원센터(FRIC)</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="" class="wholeMenuTit" title="컬렉션">컬렉션</a>
+                                    <ul>
+                                        <li>
+                                            <a href="" title="이용신청현황">이용신청현황</a>
+                                            <ul>
+                                                <li><a href="" title="대출/연장/예약/캠퍼스대출">대출/연장/예약/캠퍼스대출</a></li>
+                                                <li><a href="" title="자료구입신청현황">자료구입신청현황</a></li>
+                                                <li><a href="" title="이용교육신청현황">이용교육신청현황</a></li>
+                                                <li><a href="" title="학술연구지원신청현황">학술연구지원신청현황</a></li>
+                                                <li><a href="" title="타도서관이용">타도서관이용</a></li>
+                                                <li><a href="" title="서가에 없는 도서">서가에 없는 도서</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="개인화서비스">개인화서비스</a>
+                                            <ul>
+                                                <li><a href="" title="내서재">내서재</a></li>
+                                                <li><a href="" title="SDI 신청/조회">SDI 신청/조회</a></li>
+                                                <li><a href="" title="내서평/태그">내서평/태그</a></li>
+                                                <li><a href="" title="개인정보수정">개인정보수정</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="북큐레이션">북큐레이션</a>
+                                            <ul>
+                                                <li><a href="" title="내독서취향">내독서취향</a></li>
+                                                <li><a href="" title="독서통계">독서통계</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="" class="wholeMenuTit" title="도서관 안내">도서관 안내</a>
+                                    <ul>
+                                        <li>
+                                            <a href="" title="도서관 소개">도서관 소개</a>
+                                            <ul>
+                                                <li><a href="" title="도서관안내">도서관안내</a></li>
+                                                <li><a href="" title="조직/직원">조직/직원</a></li>
+                                                <li><a href="" title="도서관 규정">도서관 규정</a></li>
+                                                <li><a href="" title="도서관 현황">도서관 현황</a></li>
+                                                <li><a href="" title="자료정리체계">자료정리체계</a></li>
+                                                <li><a href="" title="도서관위치">도서관위치</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="이용안내">이용안내</a>
+                                            <ul>
+                                                <li><a href="" title="이용시간">이용시간</a></li>
+                                                <li><a href="" title="시설/열람실이용">시설/열람실이용</a></li>
+                                                <li><a href="" title="모바일신분증">모바일신분증</a></li>
+                                                <li><a href="" title="와이파이 안내">와이파이 안내</a></li>
+                                                <li><a href="" title="출력복사스캔">출력복사스캔</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="분관/외국학술지지원센터">분관/외국학술지지원센터</a>
+                                            <ul>
+                                                <li><a href="" title="법학도서관">법학도서관</a></li>
+                                                <li><a href="" title="의학도서관">의학도서관</a></li>
+                                                <li><a href="" title="치의학도서관">치의학도서관</a></li>
+                                                <li><a href="" title="특성화캠퍼스도서관">특성화캠퍼스도서관</a></li>
+                                                <li><a href="" title="외국학술지원센터(FRIC)">외국학술지원센터(FRIC)</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="자료기증안내">자료기증안내</a>
+                                            <ul>
+                                                <li><a href="" title="기증안내">기증안내</a></li>
+                                                <li><a href="" title="기증자예우">기증자예우</a></li>
+                                                <li><a href="" title="자료등록기준">자료등록기준</a></li>
+                                                <li><a href="" title="기증내역">기증내역</a></li>
+                                                <li><a href="" title="개인문고">개인문고</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="이용문의">이용문의</a>
+                                            <ul>
+                                                <li><a href="" title="1:1 문의">1:1 문의</a></li>
+                                                <li><a href="" title="FAQ">FAQ</a></li>
+                                                <li><a href="" title="서비스별 연락처">서비스별 연락처</a></li>
+                                                <li><a href="" title="공개자료실">공개자료실</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="" class="wholeMenuTit" title="My Library">My Library</a>
+                                    <ul>
+                                        <li>
+                                            <a href="" title="이용신청현황">이용신청현황</a>
+                                            <ul>
+                                                <li><a href="" title="대출/연장/예약/캠퍼스대출">대출/연장/예약/캠퍼스대출</a></li>
+                                                <li><a href="" title="자료구입신청현황">자료구입신청현황</a></li>
+                                                <li><a href="" title="이용교육신청현황">이용교육신청현황</a></li>
+                                                <li><a href="" title="학술연구지원신청현황">학술연구지원신청현황</a></li>
+                                                <li><a href="" title="타도서관이용">타도서관이용</a></li>
+                                                <li><a href="" title="서가에 없는 도서">서가에 없는 도서</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="개인화서비스">개인화서비스</a>
+                                            <ul>
+                                                <li><a href="" title="내서재">내서재</a></li>
+                                                <li><a href="" title="SDI 신청/조회">SDI 신청/조회</a></li>
+                                                <li><a href="" title="내서평/태그">내서평/태그</a></li>
+                                                <li><a href="" title="개인정보수정">개인정보수정</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="북큐레이션">북큐레이션</a>
+                                            <ul>
+                                                <li><a href="" title="내독서취향">내독서취향</a></li>
+                                                <li><a href="" title="독서통계">독서통계</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="" class="wholeMenuTit" title="도서관 시설">도서관 시설</a>
+                                    <ul>
+                                        <li>
+                                            <a href="" title="이용신청현황">이용신청현황</a>
+                                            <ul>
+                                                <li><a href="" title="대출/연장/예약/캠퍼스대출">대출/연장/예약/캠퍼스대출</a></li>
+                                                <li><a href="" title="자료구입신청현황">자료구입신청현황</a></li>
+                                                <li><a href="" title="이용교육신청현황">이용교육신청현황</a></li>
+                                                <li><a href="" title="학술연구지원신청현황">학술연구지원신청현황</a></li>
+                                                <li><a href="" title="타도서관이용">타도서관이용</a></li>
+                                                <li><a href="" title="서가에 없는 도서">서가에 없는 도서</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="개인화서비스">개인화서비스</a>
+                                            <ul>
+                                                <li><a href="" title="내서재">내서재</a></li>
+                                                <li><a href="" title="SDI 신청/조회">SDI 신청/조회</a></li>
+                                                <li><a href="" title="내서평/태그">내서평/태그</a></li>
+                                                <li><a href="" title="개인정보수정">개인정보수정</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="" title="북큐레이션">북큐레이션</a>
+                                            <ul>
+                                                <li><a href="" title="내독서취향">내독서취향</a></li>
+                                                <li><a href="" title="독서통계">독서통계</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //전체메뉴 -->
+        </header>
+        <!--//divHeader-->
+
+        <!--divContentsW-->
+        <div id="divContentsW">
+            <div id="divContents">
+                <div class="subCommon">
+                    <div>
+                        <h2 id="divTitle">학술DB 주제별리스트</h2>
+                        <div id="divLocation">
+                            <ul>
+                                <li>
+                                    <a href="" title="홈으로">홈으로</a>
+                                </li>
+                                <li>
+                                    <a href="" title="검색">검색</a>
+                                </li>
+                                <li>
+                                    <a href="" title="학술DB">학술DB</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="divContent">
+                    <!-- subject -->
+                    <div class="subject">
+                        <div class="topicCont">
+                            <ul class="subjectDepth01 scrollCustom2">
+                                <li class="on">
+                                    <a href="#" title="전분야">전분야</a>
+                                    <div class="subjectDepth02W">
+                                        <ul class="subjectDepth02 scrollCustom">
+                                            <li><a href="#" title="국내 학술지 논문">국내 학술지 논문</a></li>
+                                            <li><a href="#" title="백과사전">백과사전</a></li>
+                                            <li><a href="#" title="동영상 강좌">동영상 강좌</a></li>
+                                            <li><a href="#" title="서지관리툴">서지관리툴</a></li>
+                                            <li><a href="#" title="신문">신문</a></li>
+                                            <li><a href="#" title="전자도서">전자도서</a></li>
+                                            <li><a href="#" title="특허정보">특허정보</a></li>
+                                            <li><a href="#" title="통계정보">통계정보</a></li>
+                                            <li><a href="#" title="학위논문">학위논문</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" title="어문학">어문학</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="인문과학">인문과학</a>
+                                    <div class="subjectDepth02W">
+                                        <ul class="subjectDepth02 scrollCustom">
+                                            <li><a href="#" title="사힉">사학</a></li>
+                                            <li><a href="#" title="어문학">어문학</a></li>
+                                            <li><a href="#" title="종교">종교</a></li>
+                                            <li><a href="#" title="철학">철학</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" title="공학">공학</a>
+                                    <div class="subjectDepth02W">
+                                        <ul class="subjectDepth02 scrollCustom">
+                                            <li><a href="#" title="건축토목공학">건축토목공학</a></li>
+                                            <li class="hasDepth3">
+                                                <a href="#" title="컴퓨터공학부">컴퓨터공학부(3depth)</a>
+                                                <ul class="subjectDepth03 scrollCustom">
+                                                    <li><a href="#" title="컴퓨터공학">컴퓨터공학</a></li>
+                                                    <li><a href="#" title="게임소프트웨어">게임소프트웨어</a></li>
+                                                    <li><a href="#" title="디지펜게임공학">디지펜게임공학</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#" title="도시학">도시학</a></li>
+                                            <li><a href="#" title="기계자동차공학">기계자동차공학</a></li>
+                                            <li><a href="#" title="로봇응용학">로봇응용학</a></li>
+                                            <li><a href="#" title="화공신소재공학">화공신소재공학</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" title="자연과학">자연과학</a>
+                                    <div class="subjectDepth02W">
+                                        <ul class="subjectDepth02 scrollCustom">
+                                            <li><a href="#" title="물리학">물리학</a></li>
+                                            <li><a href="#" title="생명과학">생명과학</a></li>
+                                            <li><a href="#" title="수학/통계학">수학/통계학</a></li>
+                                            <li><a href="#" title="화학/나노과학">화학/나노과학</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" title="기술">기술</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="사회과학">사회과학</a>
+                                    <div class="subjectDepth02W">
+                                        <ul class="subjectDepth02 scrollCustom">
+                                            <li><a href="#" title="경제학">경제학</a></li>
+                                            <li><a href="#" title="국제학">국제학</a></li>
+                                            <li><a href="#" title="문헌정보학">문헌정보학</a></li>
+                                            <li><a href="#" title="사회복지학">사회복지학</a></li>
+                                            <li><a href="#" title="사회학">사회학</a></li>
+                                            <li><a href="#" title="심리학">심리학</a></li>
+                                            <li><a href="#" title="여성학">여성학</a></li>
+                                            <li><a href="#" title="정치외교학">정치외교학</a></li>
+                                            <li><a href="#" title="행정학">행정학</a></li>
+                                            <li><a href="#" title="언론/홍보/영상학">언론/홍보/영상학</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" title="의약학">의약학</a>
+                                    <div class="subjectDepth02W">
+                                        <ul class="subjectDepth02 scrollCustom">
+                                            <li><a href="#" title="의학">의학</a></li>
+                                            <li><a href="#" title="약학">약학</a></li>
+                                        </ul>
+                                    </div>
+                                </li> 
+                                <li>
+                                    <a href="#" title="간호학">간호학</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="농학">농학</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="수해양">수해양</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="법학">법학</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="교육학">교육학</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="한국학">한국학</a>
+                                    <div class="subjectDepth02W">
+                                        <ul class="subjectDepth02 scrollCustom">
+                                            <li><a href="#" title="지리/여행">지리/여행</a></li>
+                                            <li><a href="#" title="전기">전기</a></li>
+                                            <li><a href="#" title="고대사">고대사</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#" title="예체능">예체능</a>
+                                    <div class="subjectDepth02W">
+                                        <ul class="subjectDepth02 scrollCustom">
+                                            <li><a href="#" title="미술/디자인">미술/디자인</a></li>
+                                            <li><a href="#" title="의류학">의류학</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //subject -->
+                    <!-- searchArea -->
+                    <div class="searchArea">
+                        <p class="limitSearchBtn"><a href="#">선택조건으로 조회</a></p>
+                        <form id="form" name="form" action="/search/ers/ersPackList" method="get">
+                            <input type="hidden" name="gid" value="000000000121">
+                            <input type="hidden" name="mId" value="10303020">
+                            <input type="hidden" name="sid" value="000000000001">
+                            <fieldset>
+                                <legend>제한검색조건</legend>
+                                <span class="bunch">
+                                    <label for="os" class="skip">주제</label>
+                                    <select id="os" name="os" class="selectBox3" title="주제">
+                                        <option value="">주제</option>
+                                        <option value="주제1">주제1</option>
+                                        <option value="주제2">주제2</option>
+                                    </select>
+                                    <label for="os" class="skip">검색어</label>
+                                    <select id="os" name="os" class="selectBox3" title="검색어">
+                                        <option value="">검색어</option>
+                                        <option value="검색어1">검색어1</option>
+                                        <option value="검색어2">검색어2</option>
+                                    </select>
+                                </span>
+                                <span class="bunch">
+                                    <label for="sw" class="skip"></label>
+                                    <input id="sw" name="sw" class="inputTextType3" type="text" value="" placeholder="패키지 이름">
+                                </span>
+                                <span class="bunch">
+                                    <label for="of" class="skip">정렬</label>
+                                    <select id="of" name="of" class="selectBox3" title="정렬">
+                                        <option value="">정렬</option>
+                                        <option value="PACK">패키지</option>
+                                        <option value="PROVORGAN">대행사</option>
+                                    </select>
+                                    <label for="os" class="skip">정렬방향</label>
+                                    <select id="os" name="os" class="selectBox3" title="정렬방향">
+                                        <option value="">정렬방향</option>
+                                        <option value="ASC">오름차순</option>
+                                        <option value="DESC">내림차순</option>
+                                    </select>
+                                    <label for="os" class="skip">정렬개수</label>
+                                    <select id="os" name="os" class="selectBox3" title="정렬개수">
+                                        <option value="10">10건</option>
+                                        <option value="20">20건</option>
+                                    </select>
+                                </span>
+                                <span class="bunch"><input type="submit" value="조회" class="btnType2"></span>
+                            </fieldset>
+                        </form>
+                    </div>
+                    <!-- //searchArea -->
+                    <div class="briefContent">
+                        <h2 class="skip">검색결과</h2>
+                        <div class="dbServiceInfo">
+                            <ul>
+                                <li><span class="dbServiceIcon blueIcon">교내</span>교내에서만 접근 가능</li>
+                                <li><span class="dbServiceIcon greenIcon">로그인</span>로그인 필요</li>
+                                <li><span class="dbServiceIcon grayIcon">ID/PW</span>로그인시 ID/PW 확인 가능</li>
+                                <li><span class="dbServiceIcon orangeIcon">QA</span>Open Access</li>
+                            </ul>
+                        </div>
+                        <div class="dbTable">
+                            <table class="mobileTable">
+                                <caption>공지사항 - 번호, 제목, 작성자, 작성일, 첨부파일, 조회수, 추천, CCL 제공표</caption>
+                                <colgroup>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" class="bookMarkW"><img src="image/standard/ico/bookmarkOff.png" alt="즐겨찾기"></th>
+                                        <th class="num"></th>
+                                        <th class="alignL" scope="col" data-class="expand">Database</th>
+                                        <th scope="col" data-hide="phone,tablet">제공형태</th>
+                                        <th scope="col" data-hide="phone,tablet">서비스범위</th>
+                                        <th scope="col" data-hide="phone,tablet">이용안내</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="bookMarkW"><a class="bookMark on" href="#" title="즐겨찾기에 저장 됨">즐겨찾기에 저장 됨</a></td>
+                                        <td class="num">1</td>
+                                        <td class="alignL">
+                                            <p class="class">인용</p>
+                                            <div class="dbTitleW">
+                                                <a class="dbTitle" href="#" title="JCR (Journal Citation Reports)">JCR (Journal Citation Reports)</a>
+                                                <a class="dbUrl" href="#" title="URL 바로가기">URL</a>
+                                                <span class="new">new</span>
+                                            </div>
+                                            <p class="explain">SCIE, SSCI 등재 저널의 인용도 분석 및 Impact. Factor 등의 평가 지수 제공</p>
+                                            <ul class="sbjTag">
+                                                <li>전분야</li>
+                                            </ul>
+                                            <p class="orgname">Clarivatae Analytics</p>
+                                        </td>
+                                        <td>인용지수</td>
+                                        <td>
+                                            <ul class="dbServiceInfo">
+                                                <li><span class="dbServiceIcon blueIcon">교내</span></li>
+                                                <li><span class="dbServiceIcon greenIcon">로그인</span></li>
+                                            </ul>
+                                        </td>
+                                        <td><a href="" class="btnType3" title="매뉴얼">매뉴얼</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bookMarkW"><a class="bookMark on" href="#" title="즐겨찾기에 저장 됨">즐겨찾기에 저장 됨</a></td>
+                                        <td class="num">2</td>
+                                        <td class="alignL">
+                                            <p class="class">Ebook</p>
+                                            <div class="dbTitleW">
+                                                <a class="dbTitle" href="#" title="Science Direct">Science Direct</a>
+                                                <a class="dbUrl" href="#" title="URL 바로가기">URL</a>
+                                                <span class="new">new</span>
+                                            </div>
+                                            <p class="explain">Elsevier 출판사의 저널, e-Book 원문 제공</p>
+                                            <ul class="sbjTag">
+                                                <li>전분야</li>
+                                            </ul>
+                                            <p class="orgname">Elsevier B.V</p>
+                                        </td>
+                                        <td>Ebook</td>
+                                        <td>
+                                            <ul class="dbServiceInfo">
+                                                <li>
+                                                    <a href="#" class="dbServiceIcon grayIcon">ID/PW</a>
+                                                    <span class="dbServicePop">
+                                                        <span>ID : 111</span>
+                                                        <span>PW : 111</span>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <a href="" class="btnType3" title="매뉴얼">매뉴얼</a>
+                                            <a href="" class="btnType4" title="동영상">동영상</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bookMarkW"><a class="bookMark on" href="#" title="즐겨찾기에 저장 됨">즐겨찾기에 저장 됨</a></td>
+                                        <td class="num">3</td>
+                                        <td class="alignL">
+                                            <p class="class">인용</p>
+                                            <div class="dbTitleW">
+                                                <a class="dbTitle" href="#" title="Web of Science">Web of Science</a>
+                                                <a class="dbUrl" href="#" title="URL 바로가기">URL</a>
+                                            </div>
+                                            <p class="explain">과학기술, 사회과학 및 인문예술분야 저널 논문 및 Conference Proceeding 정보 및 인용정보 제공</p>
+                                            <ul class="sbjTag">
+                                                <li>전분야</li>
+                                            </ul>
+                                            <p class="orgname">Clarivate</p>
+                                        </td>
+                                        <td>인용지</td>
+                                        <td>
+                                            <ul class="dbServiceInfo">
+                                                <li><span class="dbServiceIcon greenIcon">로그인</span></li>
+                                            </ul>
+                                        </td>
+                                        <td>
+                                            <a href="" class="btnType4" title="동영상">동영상</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bookMarkW"><a class="bookMark" href="#" title="즐겨찾기에 추가하기">즐겨찾기에 추가하기</a></td>
+                                        <td class="num">4</td>
+                                        <td class="alignL">
+                                            <p class="class">학술논문</p>
+                                            <div class="dbTitleW">
+                                                <a class="dbTitle" href="#" title="Academic Search Premier">Academic Search Premier</a>
+                                                <a class="dbUrl" href="#" title="URL 바로가기">URL</a>
+                                            </div>
+                                            <p class="explain">인문사회,자연과학,공학 등 전 분야의 주요 논문 정보 및 일부 원문 제공</p>
+                                            <ul class="sbjTag">
+                                                <li>전분야</li>
+                                            </ul>
+                                            <p class="orgname">EBSCO</p>
+                                        </td>
+                                        <td>학술논문</td>
+                                        <td>
+                                            
+                                        </td>
+                                        <td>
+                                            <a href="" class="btnType3" title="매뉴얼">매뉴얼</a>
+                                            <a href="" class="btnType4" title="동영상">동영상</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bookMarkW"><a class="bookMark" href="#" title="즐겨찾기에 추가하기">즐겨찾기에 추가하기</a></td>
+                                        <td class="num">5</td>
+                                        <td class="alignL">
+                                            <p class="class">학술논문</p>
+                                            <div class="dbTitleW">
+                                                <a class="dbTitle" href="#" title="ACM Digital Library">ACM Digital Library</a>
+                                                <a class="dbUrl" href="#" title="URL 바로가기">URL</a>
+                                                <span class="dbRecom">추천</span>
+                                            </div>
+                                            <p class="explain">인문사회,자연과학,공학 등 전 분야의 주요 논문 정보 및 일부 원문 제공</p>
+                                            <ul class="sbjTag">
+                                                <li>인문학</li>
+                                                <li>사회과학</li>
+                                                <li>국제법</li>
+                                                <li>생물학</li>
+                                            </ul>
+                                            <p class="orgname">Association for Computing Machinery</p>
+                                        </td>
+                                        <td>학술논문</td>
+                                        <td>
+                                            <ul class="dbServiceInfo">
+                                                <li><span class="dbServiceIcon orangeIcon">QA</span></li>
+                                            </ul>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bookMarkW"><a class="bookMark" href="#" title="즐겨찾기에 추가하기">즐겨찾기에 추가하기</a></td>
+                                        <td class="num">6</td>
+                                        <td class="alignL">
+                                            <p class="class">학술논문</p>
+                                            <div class="dbTitleW">
+                                                <a class="dbTitle" href="#" title="Brill Open Access Journal">Brill Open Access Journal</a>
+                                                <a class="dbUrl" href="#" title="URL 바로가기">URL</a>
+                                            </div>
+                                            <p class="explain">SCIE, SSCI 등재저널의 인용도 분석 및 Impact Factor 등의 평가 지수 제공</p>
+                                            <ul class="sbjTag">
+                                                <li>인문학</li>
+                                            </ul>
+                                            <p class="orgname">Brill Academic Publishers</p>
+                                        </td>
+                                        <td>학술논문</td>
+                                        <td>
+                                            <ul class="dbServiceInfo">
+                                                <li><span class="dbServiceIcon blueIcon">교내</span></li>
+                                            </ul>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bookMarkW"><a class="bookMark" href="#" title="즐겨찾기에 추가하기">즐겨찾기에 추가하기</a></td>
+                                        <td class="num">7</td>
+                                        <td class="alignL">
+                                            <p class="class">학술논문</p>
+                                            <div class="dbTitleW">
+                                                <a class="dbTitle" href="#" title="CINAHL">CINAHL</a>
+                                                <a class="dbUrl" href="#" title="URL 바로가기">URL</a>
+                                            </div>
+                                            <p class="explain">Elsevier 출판사의 저널, e-Book 원문 제공</p>
+                                            <ul class="sbjTag">
+                                                <li>인문학</li>
+                                                <li>사회과학</li>
+                                            </ul>
+                                            <p class="orgname">EBSCO</p>
+                                        </td>
+                                        <td>학술논문</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bookMarkW"><a class="bookMark" href="#" title="즐겨찾기에 추가하기">즐겨찾기에 추가하기</a></td>
+                                        <td class="num">8</td>
+                                        <td class="alignL">
+                                            <p class="class">학술논문</p>
+                                            <div class="dbTitleW">
+                                                <a class="dbTitle" href="#" title="DBPia">DBPia</a>
+                                                <a class="dbUrl" href="#" title="URL 바로가기">URL</a>
+                                                <span class="dbRecom">추천</span>
+                                            </div>
+                                            <p class="explain">과학기술, 사회과학 및 인문예술분야 저널 논문 및 Conference Proceedings 정보 및 인용정보 제공</p>
+                                            <ul class="sbjTag">
+                                                <li>인문학</li>
+                                                <li>사회과학</li>
+                                                <li>국제법</li>
+                                                <li>생물학</li>
+                                            </ul>
+                                            <p class="orgname">누리미디어</p>
+                                        </td>
+                                        <td>학술논문</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bookMarkW"><a class="bookMark" href="#" title="즐겨찾기에 추가하기">즐겨찾기에 추가하기</a></td>
+                                        <td class="num">9</td>
+                                        <td class="alignL">
+                                            <p class="class">학술논문</p>
+                                            <div class="dbTitleW">
+                                                <a class="dbTitle" href="#" title="DOAJ">DOAJ</a>
+                                                <a class="dbUrl" href="#" title="URL 바로가기">URL</a>
+                                            </div>
+                                            <p class="explain">인문과학, 자연과학, 공학 등 전 분야의 주요 논문 정보 및 일부 원문 제공</p>
+                                            <ul class="sbjTag">
+                                                <li>인문학</li>
+                                                <li>사회과학</li>
+                                            </ul>
+                                            <p class="orgname">DOAJ</p>
+                                        </td>
+                                        <td>학술논문</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="bookMarkW"><a class="bookMark" href="#" title="즐겨찾기에 추가하기">즐겨찾기에 추가하기</a></td>
+                                        <td class="num">10</td>
+                                        <td class="alignL">
+                                            <p class="class">인용</p>
+                                            <div class="dbTitleW">
+                                                <a class="dbTitle" href="#" title="Scopus">Scopus</a>
+                                                <a class="dbUrl" href="#" title="URL 바로가기">URL</a>
+                                            </div>
+                                            <p class="explain">컴퓨터/공학 분야의 학술저널, Transaction 및 Proceeding 원문 제공</p>
+                                            <ul class="sbjTag">
+                                                <li>전분야</li>
+                                            </ul>
+                                            <p class="orgname">Elsevier B.V.</p>
+                                        </td>
+                                        <td>인용</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="paging">
+                            <a href="" class="page"><img src="image/standard/btn/firstPage.png" alt="맨앞"></a>
+                            <a href="" class="page"><img src="image/standard/btn/prevPage.png" alt="이전페이지로"></a>
+                            <span>
+                                <span>1</span>
+                                <a href="">2</a>
+                                <a href="">3</a>
+                                <a href="">4</a>
+                                <a href="">5</a>
+                            </span>
+                            <a href="" class="page"><img src="image/standard/btn/nextPage.png" alt="다음페이지로"></a>
+                            <a href="" class="page"><img src="image/standard/btn/lastPage.png" alt="맨뒤"></a>
+                        </div>
+                    </div>
+                    <div class="btnBunchType1 rigthOrder auto mt80">
+                        <span>
+                            <a href="" class="botBtnType4">쓰기</a>
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <!--//divContentsW-->
+
+        <!--divFooter-->
+        <footer id="divFooter">
+            <div class="footer"> 
+                <div class="footerMenu"> 
+                    
+                        <ul> 
+                            <li><a href="" title="개인정보처리방침" class="privacy" id="privacy">개인정보처리방침</a></li>
+                            <li><a href="" title="이메일무단수집거부">이메일무단수집거부</a></li>
+                        </ul>
+                </div>
+                <div class="libraryInfo">
+                    <address>(07286) 서울 영등포구 경인로71길 70, 1102호&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;070-8014-5500
+                    </address>
+                    <p class="copyright">Copyright © FUTURENURI. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <!--//divFooter-->
+
+    </div>
+    <!--divWrapper-->
+
+
+
+</body></html>
