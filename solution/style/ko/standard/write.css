@@ -41,8 +41,8 @@
     .boardWrite{padding: 30px 8px;}
     .boardWrite .bunch{margin: 2px 0 3px 0;}
     .boardWrite table{display: block; position: relative;}
-    .boardWrite table tbody{display: block; position: relative;}
-    .boardWrite table tr{display: block; position: relative;}
+    .boardWrite table tbody{display: block; width: 100%; position: relative;}
+    .boardWrite table tr{display: block; width: 100%; position: relative;}
     .boardWrite table th{display: block; width: 100%; padding: 0; margin-top: 20px; position: relative;}
     .boardWrite table tr:first-child th:first-child{margin-top: 0;}
     .boardWrite table td{display: block; width: 100%; padding: 0; margin-top: 0px; position: relative;}
