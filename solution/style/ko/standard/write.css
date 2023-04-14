@@ -17,13 +17,15 @@
 .boardWrite table th label,.boardWrite table th span{font-size: inherit;}
 .boardWrite table td{padding: 6px; box-sizing: border-box;}
 .boardWrite table td img{vertical-align: text-top;}
-.boardWrite input[type=text],.boardWrite input[type=password],.boardWrite input[type=email]{width: 100%; height: 34px; border: 0; border-bottom: 1px solid #d9d9d9;font-size: 15px;font-family: PretendardM, sans-serif;color: #4c4c4c;}
+.boardWrite input[type=text],.boardWrite input[type=password],.boardWrite input[type=email]{width: 100%; height: 34px; border: 0; border-bottom: 1px solid #d9d9d9;font-size: 15px;font-family: PretendardM, sans-serif;color: #4c4c4c; margin: 2px 0;}
+.boardWrite input::placeholder{color: #afafaf; font-family: Pretendard, sans-serif; font-size: 14px;}
 .boardWrite .inputBunch{display: flex; align-items: baseline; border-bottom: 1px solid #d9d9d9;}
 .boardWrite .inputBunch input{border-bottom: 0;}
 .boardWrite .inputBunch .bunch{flex-shrink: 0;}
 .boardWrite .fileBtn{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}
 .boardWrite .fileBtn + label{display: inline-block; min-width: 103px; line-height: 1.2em; border: 0; border-radius: 16px; padding: 6px 14px; box-sizing: border-box; background-color: #ededf0; color: #6f6f6f; font-size: 14px; text-align: center;}
 .boardWrite .fileBtn:focus + label{outline: 2px solid #000; }
+.boardWrite .fileNotice{font-size: 14px; color: #6f6f6f;}
 .boardWrite .fileUpload .dropBox{border: 1px solid #d9d9d9; border-radius: 12px; overflow: hidden; min-height: 75px; position: relative; margin-top: 10px;}
 .boardWrite .fileUpload .dropBox .placeholder{font-size: 14px; color: #6f6f6f; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);}
 .boardWrite .editor{border: 1px solid #d9d9d9; border-radius: 12px; overflow: hidden; min-height: 370px; margin-top: 10px;}
@@ -41,8 +43,9 @@
     .boardWrite table{display: block;}
     .boardWrite table tr{display: block;}
     .boardWrite table tr:first-child th:first-child{margin-top: 0;}
-    .boardWrite table th{display: block; padding: 0; margin-top: 20px;}
-    .boardWrite table td{display: block; padding: 0; margin-top: 0px;}
+    .boardWrite table th{display: block; width: 100%; padding: 0; margin-top: 20px;}
+    .boardWrite table td{display: block; width: 100%; padding: 0; margin-top: 0px;}
     .boardWrite .limCal{width: 100%;}
     .boardWrite .selectBox3{width: 100%;}
+    .boardWrite .fileNotice{font-size: 13px;}
 }
